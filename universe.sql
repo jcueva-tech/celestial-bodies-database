@@ -18,13 +18,13 @@ SET row_security = off;
 
 DROP DATABASE universe;
 --
--- Name: universe; Type: DATABASE; Schema: -; Owner: camper
+-- Name: universe; Type: DATABASE; Schema: -; Owner: freecodecamp
 --
 
 CREATE DATABASE universe WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'C.UTF-8' LC_CTYPE = 'C.UTF-8';
 
 
-ALTER DATABASE universe OWNER TO camper;
+ALTER DATABASE universe OWNER TO freecodecamp;
 
 \connect universe
 
@@ -44,7 +44,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: constellation; Type: TABLE; Schema: public; Owner: camper
+-- Name: constellation; Type: TABLE; Schema: public; Owner: freecodecamp
 --
 
 CREATE TABLE public.constellation (
@@ -54,10 +54,10 @@ CREATE TABLE public.constellation (
 );
 
 
-ALTER TABLE public.constellation OWNER TO camper;
+ALTER TABLE public.constellation OWNER TO freecodecamp;
 
 --
--- Name: constellation_constellation_id_seq; Type: SEQUENCE; Schema: public; Owner: camper
+-- Name: constellation_constellation_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
 --
 
 CREATE SEQUENCE public.constellation_constellation_id_seq
@@ -69,17 +69,17 @@ CREATE SEQUENCE public.constellation_constellation_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.constellation_constellation_id_seq OWNER TO camper;
+ALTER TABLE public.constellation_constellation_id_seq OWNER TO freecodecamp;
 
 --
--- Name: constellation_constellation_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: camper
+-- Name: constellation_constellation_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
 --
 
 ALTER SEQUENCE public.constellation_constellation_id_seq OWNED BY public.constellation.constellation_id;
 
 
 --
--- Name: galaxy; Type: TABLE; Schema: public; Owner: camper
+-- Name: galaxy; Type: TABLE; Schema: public; Owner: freecodecamp
 --
 
 CREATE TABLE public.galaxy (
@@ -87,14 +87,15 @@ CREATE TABLE public.galaxy (
     name character varying(255) NOT NULL,
     description text,
     has_life boolean,
-    age_in_millions_of_years numeric
+    age_in_millions_of_years numeric,
+    estimated_size_ly integer
 );
 
 
-ALTER TABLE public.galaxy OWNER TO camper;
+ALTER TABLE public.galaxy OWNER TO freecodecamp;
 
 --
--- Name: galaxy_galaxy_id_seq; Type: SEQUENCE; Schema: public; Owner: camper
+-- Name: galaxy_galaxy_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
 --
 
 CREATE SEQUENCE public.galaxy_galaxy_id_seq
@@ -106,17 +107,17 @@ CREATE SEQUENCE public.galaxy_galaxy_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.galaxy_galaxy_id_seq OWNER TO camper;
+ALTER TABLE public.galaxy_galaxy_id_seq OWNER TO freecodecamp;
 
 --
--- Name: galaxy_galaxy_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: camper
+-- Name: galaxy_galaxy_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
 --
 
 ALTER SEQUENCE public.galaxy_galaxy_id_seq OWNED BY public.galaxy.galaxy_id;
 
 
 --
--- Name: moon; Type: TABLE; Schema: public; Owner: camper
+-- Name: moon; Type: TABLE; Schema: public; Owner: freecodecamp
 --
 
 CREATE TABLE public.moon (
@@ -128,10 +129,10 @@ CREATE TABLE public.moon (
 );
 
 
-ALTER TABLE public.moon OWNER TO camper;
+ALTER TABLE public.moon OWNER TO freecodecamp;
 
 --
--- Name: moon_moon_id_seq; Type: SEQUENCE; Schema: public; Owner: camper
+-- Name: moon_moon_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
 --
 
 CREATE SEQUENCE public.moon_moon_id_seq
@@ -143,17 +144,17 @@ CREATE SEQUENCE public.moon_moon_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.moon_moon_id_seq OWNER TO camper;
+ALTER TABLE public.moon_moon_id_seq OWNER TO freecodecamp;
 
 --
--- Name: moon_moon_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: camper
+-- Name: moon_moon_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
 --
 
 ALTER SEQUENCE public.moon_moon_id_seq OWNED BY public.moon.moon_id;
 
 
 --
--- Name: planet; Type: TABLE; Schema: public; Owner: camper
+-- Name: planet; Type: TABLE; Schema: public; Owner: freecodecamp
 --
 
 CREATE TABLE public.planet (
@@ -165,10 +166,10 @@ CREATE TABLE public.planet (
 );
 
 
-ALTER TABLE public.planet OWNER TO camper;
+ALTER TABLE public.planet OWNER TO freecodecamp;
 
 --
--- Name: planet_planet_id_seq; Type: SEQUENCE; Schema: public; Owner: camper
+-- Name: planet_planet_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
 --
 
 CREATE SEQUENCE public.planet_planet_id_seq
@@ -180,17 +181,17 @@ CREATE SEQUENCE public.planet_planet_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.planet_planet_id_seq OWNER TO camper;
+ALTER TABLE public.planet_planet_id_seq OWNER TO freecodecamp;
 
 --
--- Name: planet_planet_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: camper
+-- Name: planet_planet_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
 --
 
 ALTER SEQUENCE public.planet_planet_id_seq OWNED BY public.planet.planet_id;
 
 
 --
--- Name: star; Type: TABLE; Schema: public; Owner: camper
+-- Name: star; Type: TABLE; Schema: public; Owner: freecodecamp
 --
 
 CREATE TABLE public.star (
@@ -202,10 +203,10 @@ CREATE TABLE public.star (
 );
 
 
-ALTER TABLE public.star OWNER TO camper;
+ALTER TABLE public.star OWNER TO freecodecamp;
 
 --
--- Name: star_star_id_seq; Type: SEQUENCE; Schema: public; Owner: camper
+-- Name: star_star_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
 --
 
 CREATE SEQUENCE public.star_star_id_seq
@@ -217,52 +218,52 @@ CREATE SEQUENCE public.star_star_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.star_star_id_seq OWNER TO camper;
+ALTER TABLE public.star_star_id_seq OWNER TO freecodecamp;
 
 --
--- Name: star_star_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: camper
+-- Name: star_star_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
 --
 
 ALTER SEQUENCE public.star_star_id_seq OWNED BY public.star.star_id;
 
 
 --
--- Name: constellation constellation_id; Type: DEFAULT; Schema: public; Owner: camper
+-- Name: constellation constellation_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.constellation ALTER COLUMN constellation_id SET DEFAULT nextval('public.constellation_constellation_id_seq'::regclass);
 
 
 --
--- Name: galaxy galaxy_id; Type: DEFAULT; Schema: public; Owner: camper
+-- Name: galaxy galaxy_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.galaxy ALTER COLUMN galaxy_id SET DEFAULT nextval('public.galaxy_galaxy_id_seq'::regclass);
 
 
 --
--- Name: moon moon_id; Type: DEFAULT; Schema: public; Owner: camper
+-- Name: moon moon_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.moon ALTER COLUMN moon_id SET DEFAULT nextval('public.moon_moon_id_seq'::regclass);
 
 
 --
--- Name: planet planet_id; Type: DEFAULT; Schema: public; Owner: camper
+-- Name: planet planet_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.planet ALTER COLUMN planet_id SET DEFAULT nextval('public.planet_planet_id_seq'::regclass);
 
 
 --
--- Name: star star_id; Type: DEFAULT; Schema: public; Owner: camper
+-- Name: star star_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.star_star_id_seq'::regclass);
 
 
 --
--- Data for Name: constellation; Type: TABLE DATA; Schema: public; Owner: camper
+-- Data for Name: constellation; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
 INSERT INTO public.constellation VALUES (1, 'Orion', 'The Hunter');
@@ -271,16 +272,19 @@ INSERT INTO public.constellation VALUES (3, 'Cassiopeia', 'The Queen');
 
 
 --
--- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: camper
+-- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.galaxy VALUES (1, 'Milky Way', 'Our home', true, 13600);
-INSERT INTO public.galaxy VALUES (2, 'Andromeda', 'Nearest neighbor', false, 10000);
-INSERT INTO public.galaxy VALUES (3, 'Triangulum', 'Small spiral', false, 12000);
+INSERT INTO public.galaxy VALUES (1, 'Milky Way', 'Our home', true, 13600, NULL);
+INSERT INTO public.galaxy VALUES (2, 'Andromeda', 'Nearest neighbor', false, 10000, NULL);
+INSERT INTO public.galaxy VALUES (3, 'Triangulum', 'Small spiral', false, 12000, NULL);
+INSERT INTO public.galaxy VALUES (4, 'Sombrero', 'Hat shaped galaxy', false, 9000, NULL);
+INSERT INTO public.galaxy VALUES (5, 'Pinwheel', 'Face-on spiral galaxy', false, 11000, NULL);
+INSERT INTO public.galaxy VALUES (6, 'Cartwheel', 'Ring galaxy', false, 13000, NULL);
 
 
 --
--- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: camper
+-- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
 INSERT INTO public.moon VALUES (1, 'Luna', 3, true, 27.3);
@@ -306,7 +310,7 @@ INSERT INTO public.moon VALUES (20, 'Triton', 8, true, 5.8);
 
 
 --
--- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: camper
+-- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
 INSERT INTO public.planet VALUES (1, 'Mercury', 1, false, 0);
@@ -324,7 +328,7 @@ INSERT INTO public.planet VALUES (12, 'TRAPPIST-1d', 1, true, 40);
 
 
 --
--- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: camper
+-- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
 INSERT INTO public.star VALUES (1, 'Sun', 1, true, 1.0);
@@ -336,42 +340,42 @@ INSERT INTO public.star VALUES (6, 'Altair', 1, true, 1.8);
 
 
 --
--- Name: constellation_constellation_id_seq; Type: SEQUENCE SET; Schema: public; Owner: camper
+-- Name: constellation_constellation_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
 SELECT pg_catalog.setval('public.constellation_constellation_id_seq', 3, true);
 
 
 --
--- Name: galaxy_galaxy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: camper
+-- Name: galaxy_galaxy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 3, true);
+SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 
 
 --
--- Name: moon_moon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: camper
+-- Name: moon_moon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
 SELECT pg_catalog.setval('public.moon_moon_id_seq', 20, true);
 
 
 --
--- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: camper
+-- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
 SELECT pg_catalog.setval('public.planet_planet_id_seq', 12, true);
 
 
 --
--- Name: star_star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: camper
+-- Name: star_star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
 SELECT pg_catalog.setval('public.star_star_id_seq', 6, true);
 
 
 --
--- Name: constellation constellation_name_key; Type: CONSTRAINT; Schema: public; Owner: camper
+-- Name: constellation constellation_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.constellation
@@ -379,7 +383,7 @@ ALTER TABLE ONLY public.constellation
 
 
 --
--- Name: constellation constellation_pkey; Type: CONSTRAINT; Schema: public; Owner: camper
+-- Name: constellation constellation_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.constellation
@@ -387,7 +391,7 @@ ALTER TABLE ONLY public.constellation
 
 
 --
--- Name: galaxy galaxy_name_key; Type: CONSTRAINT; Schema: public; Owner: camper
+-- Name: galaxy galaxy_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.galaxy
@@ -395,7 +399,7 @@ ALTER TABLE ONLY public.galaxy
 
 
 --
--- Name: galaxy galaxy_pkey; Type: CONSTRAINT; Schema: public; Owner: camper
+-- Name: galaxy galaxy_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.galaxy
@@ -403,7 +407,7 @@ ALTER TABLE ONLY public.galaxy
 
 
 --
--- Name: moon moon_name_key; Type: CONSTRAINT; Schema: public; Owner: camper
+-- Name: moon moon_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.moon
@@ -411,7 +415,7 @@ ALTER TABLE ONLY public.moon
 
 
 --
--- Name: moon moon_pkey; Type: CONSTRAINT; Schema: public; Owner: camper
+-- Name: moon moon_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.moon
@@ -419,7 +423,7 @@ ALTER TABLE ONLY public.moon
 
 
 --
--- Name: planet planet_name_key; Type: CONSTRAINT; Schema: public; Owner: camper
+-- Name: planet planet_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.planet
@@ -427,7 +431,7 @@ ALTER TABLE ONLY public.planet
 
 
 --
--- Name: planet planet_pkey; Type: CONSTRAINT; Schema: public; Owner: camper
+-- Name: planet planet_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.planet
@@ -435,7 +439,7 @@ ALTER TABLE ONLY public.planet
 
 
 --
--- Name: star star_name_key; Type: CONSTRAINT; Schema: public; Owner: camper
+-- Name: star star_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.star
@@ -443,7 +447,7 @@ ALTER TABLE ONLY public.star
 
 
 --
--- Name: star star_pkey; Type: CONSTRAINT; Schema: public; Owner: camper
+-- Name: star star_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.star
@@ -451,7 +455,7 @@ ALTER TABLE ONLY public.star
 
 
 --
--- Name: moon moon_planet_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: camper
+-- Name: moon moon_planet_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.moon
@@ -459,7 +463,7 @@ ALTER TABLE ONLY public.moon
 
 
 --
--- Name: planet planet_star_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: camper
+-- Name: planet planet_star_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.planet
@@ -467,7 +471,7 @@ ALTER TABLE ONLY public.planet
 
 
 --
--- Name: star star_galaxy_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: camper
+-- Name: star star_galaxy_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.star
